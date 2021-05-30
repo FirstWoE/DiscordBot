@@ -16,14 +16,16 @@ namespace fweBot.Modules
             var embed = new EmbedBuilder
             {
                 Title = "Commands.",
-                Color = Color.DarkRed
+                Color = Color.Purple
             };
             embed.AddField(";help", "Displays this message.");
             embed.AddField(";userinfo", "Displays your's or someone you tag's user info.");
+            embed.AddField(";8ball", "Let the fortune tell.");
             embed.AddField(";ban", "Bans a user. REQUIRED: Ban Members");
             embed.AddField(";announcement", "Interactive embed to create an announcement. REQUIRED: Administrator");
             embed.AddField(";pmrole", "DM's all people with a certain role. REQUIRED: Administrator");
             embed.AddField(";testers", "Notifies all testers a testing session is taking place. REQUIRED: Administrator");
+            Context.Channel.SendMessageAsync(embed: embed.Build());
         }
     }
 }

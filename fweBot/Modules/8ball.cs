@@ -12,7 +12,7 @@ namespace fweBot.Modules
     public class _8ball : ModuleBase<SocketCommandContext>
     {
         [Command("8ball")]
-        public async Task eightBall(string message)
+        public async Task eightBall([Remainder] string message)
         {
             List<string> list = new List<string>() {"No", "Only time will tell", "DEFINITELY NOT", "I don't know son.", "Maybe, but who knows?", "100%", "YES" };
             Random rnd = new Random();

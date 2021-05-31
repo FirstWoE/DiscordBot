@@ -11,9 +11,14 @@ namespace fweBot.Modules
     public class UserInfo : ModuleBase<SocketCommandContext>
     {
         [Command("userinfo")]
-        public async Task UserInfoAsync(IUser user = null)
+        public async Task UserInfoAsync(/*ulong userID = null*/)
         {
-            user = user ?? Context.User;
+            await ReplyAsync("This command has been disabled due to a bug being found. We will fix this ASAP");
+            /*
+            if(userID == null)
+            {
+                user = Context.Message.Author.Id;
+            }
 
             var embed = new EmbedBuilder
             {
@@ -30,6 +35,7 @@ namespace fweBot.Modules
             embed.AddField("User a bot?", user.IsBot);
 
             Context.Message.Channel.SendMessageAsync(embed: embed.Build());
+            */
         }
     }
 }

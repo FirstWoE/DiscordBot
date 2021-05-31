@@ -12,14 +12,14 @@ namespace fweBot.Modules
     public class _8ball : ModuleBase<SocketCommandContext>
     {
         [Command("8ball")]
-        public async Task eightBall()
+        public async Task eightBall(string message)
         {
             List<string> list = new List<string>() {"No", "Only time will tell", "DEFINITELY NOT", "I don't know son.", "Maybe, but who knows?", "100%", "YES" };
             Random rnd = new Random();
             int number = rnd.Next(1, list.Count);
             var embed = new EmbedBuilder
             {
-                Title = "8 ball.",
+                Title = $"The 8 ball says to {message}:",
                 Description = list[number],
                 Color = Color.DarkRed
             };

@@ -38,12 +38,12 @@ namespace fweBot
                 var client = services.GetRequiredService<DiscordSocketClient>();
                 client.Log += LogAsync;
                 await client.SetStatusAsync(UserStatus.Idle);
-                client.SetGameAsync("with the developers lol");
+                client.SetGameAsync("FWE - Have fun!");
                 services.GetRequiredService<CommandService>().Log += LogAsync;
 
                 // Tokens should be considered secret data and never hard-coded.
                 // We can read from the environment variable to avoid hardcoding.
-                await client.LoginAsync(TokenType.Bot, "ODQ4NjMwMjA3NjQ0NDM0NDUy.YLPaeA.k90gSsejd-tpzFZzv1ceqEMhGUk");
+                await client.LoginAsync(TokenType.Bot, "token");
                 await client.StartAsync();
 
                 // Here we initialize the logic required to register our commands.
